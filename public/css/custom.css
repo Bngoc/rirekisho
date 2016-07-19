@@ -299,6 +299,61 @@ div.content:hover,div.content:active,div.content:focus{
     
 }
 
+/* **************** bqn custom login ***************** */
+.content {
+    padding: 0px 0px;
+}
+.content .h3-title {
+    background: #424242;
+    padding: 5px 25px;
 
+}
+.content .h3-title h3{
+    padding: 0px 0px;
+    font-size: 24px;
+    /* background: beige; */
+    text-transform: inherit;
+    color: white;
+    font-weight: 700;
+}
+.fix{
+    border: none;
+    padding: 0px 25px;
+    margin: 25px 5px;
+}
 
-
+#login .clr {
+    clear: both;
+    background: #424242;
+    padding: 20px;
+    /*position: absolute;*/
+}
+#login .clr .checkbox {
+    color: #ffffff;
+}
+#login .clr a {
+    color: #e9751a;
+    /*float: left;*/
+}
+input.float_right.b-purple.col-md-12 {
+    font-size: large;
+    padding: 14px 0;
+    text-transform: initial;
+    font-weight: bold;
+}
+.disline {
+    display: block;
+    padding: 0 0 12px;
+    margin: 30px 0 18px 0;
+    position: relative;
+    line-height: 12px;
+}
+.disline a {
+    float: right;
+    margin-right: 20px;
+    color: lightslategrey;
+}
+.fix-lable {
+    padding: 0px 0 0 12px;
+    margin: auto;
+}

@@ -8,10 +8,10 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/content.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/my-forms.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/custom.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/content.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/font.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/my-forms.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/custom.css') }}"/>
   
 </head>
 <body>

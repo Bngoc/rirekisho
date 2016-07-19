@@ -41,5 +41,7 @@
 <footer class="row simple">
     @include('includes.footer')
 </footer>
+
+<script src="{{ URL::asset('/js/bqnfunction.js') }}"></script>
 </body>
 </html>

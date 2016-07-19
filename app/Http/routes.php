@@ -41,3 +41,17 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@myLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+/** ------------------------------------------
+ *  Route constraint patterns
+ *  ------------------------------------------
+ */
+Route::pattern('id', '[0-9]+');
+Route::pattern('role', '[0-9]+');
+Route::pattern('token', '[0-9a-z]+');
+
+Route::group(['prefix' => 'user'], function (){
+    Route::get('/add', ['as' => 'getadduser', 'uses' => 'UsersController@getAddUser']);
+    Route::post('/add', ['as' => 'postadduser', 'uses' => 'UsersController@postAddUser']);
+    Route::post('/del', ['as' => 'destroyuser', 'uses' => 'UsersController@destroy']);
+});

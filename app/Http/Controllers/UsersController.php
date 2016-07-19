@@ -7,9 +7,12 @@ use Validator;
 use Illuminate\Http\Request;
 use App\User;
 use Gate;
+use Input;
+use Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Http\Requests\xUser\addUserRequest;
 
 
 class UsersController extends Controller
@@ -143,5 +146,38 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //add user
+    public function getAddUser(){
+        return View('xUser.UserAdd');
+    }
+    public function postAddUser(addUserRequest $request){
+
+        if (Input::hasFile('txtImage')) {
+            $extension = $request->file('txtImage')->getClientOriginalExtension();
+            $file_name = substr(md5(rand()), 0, 7) . "." . $extension;
+            $request->file('txtImage')->move('upload/avatar', $file_name);
+        } else {
+            $file_name = 'no_image.gif';
+        }
+        $_user = new User();
+        $_user->name = $request->txtName;
+        $_user->email = $request->txtEmail;
+        $_user->role= $request->rdoLevel;
+        $_user->active = 1;
+        $_user->password = Hash::make($request->txtPass);
+        $_user->image = $request-> $file_name;
+        $_user->note = '';
+
+        $_user->save();
+        return redirect()
+                 ->route('getadduser')
+                 ->with(
+                     [
+                         'flash_level' => 'success',
+                         'message' => 'Đã thêm user thành công'
+                     ]
+                 );
     }
 }
